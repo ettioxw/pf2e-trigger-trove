@@ -9,13 +9,15 @@
     "minimum": "13",
     "verified": "13"
   },
-  "description": "<p>A collection of triggers to use with the PF2e Trigger module.</p>",
+  "description": "A collection of triggers to use with the PF2e Trigger module.",
+  "download": "https://github.com/pedrogrullada/pf2e-hero-point-deck-expansion/releases/download/1.0.0/module.zip",
   "flags": {
     "pf2e-trigger-trove": {
       "triggers": "triggers/pf2e-trigger-trove.json"
     }
   },
   "id": "pf2e-trigger-trove",
+  "manifest": "https://github.com/pedrogrullada/pf2e-trigger-trove/releases/latest/download/module.json",
   "relationships": {
     "systems": [
       {
@@ -27,11 +29,16 @@
     "requires": [
       {
         "id": "pf2e-trigger",
+        "name": "PF2e Trigger",
+        "manifest": "https://raw.githubusercontent.com/reonZ/pf2e-trigger/master/module.json",
         "type": "module",
-        "compatibility": {}
+        "compatibility": {
+          "minimum": "2.13.0"
+        }
       }
     ]
   },
   "title": "PF2e Trigger Trove",
-  "version": "1.0"
+  "url": "https://github.com/pedrogrullada/pf2e-trigger-trove",
+  "version": "1.0.0"
 }
