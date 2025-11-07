@@ -1,0 +1,31 @@
+{
+  "authors": [
+    {
+      "flags": {},
+      "name": "Pedro Grullo"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "description": "A collection of triggers to use with the PF2e Trigger module.",
+  "flags": {
+    "pf2e-trigger-trove": {
+        "triggers": "triggers/pf2e-trigger-trove.json"
+    }
+  },
+  "id": "pf2e-trigger-trove",
+  "relationships": {
+    "systems": [
+      {
+        "compatibility": {},
+        "id": "pf2e",
+        "type": "system"
+      }
+    ]
+  },
+  "title": "PF2e Trigger Trove",
+  "url": "",
+  "version": "1.0"
+}
