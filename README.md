@@ -33,14 +33,16 @@ If you want to contribute your own trigger, here's how you do it:
 
 ### Adding Triggers
 
-1. Import the `pf2e-trigger-trove.json` file to your world. Make sure to **check the Keep IDs box.**
-    - I recommend you use a world without other triggers to avoid accidentally exporting triggers other than the ones you wish to contribute.
-    - Importing the module's trigger file first will allow you to use any of this module's subtriggers, if necessary. Might save you some work!
-2. Create your triggers. Here's a few things to keep in mind:
+1. Create your triggers. Here's a few things to keep in mind:
     - See [Triggers Style Guide](#triggers-style-guide).
     - If your trigger relies on certain items, usually effects, they should go in the Auxiliary Items compendium. See [Adding Auxiliary Items.](#adding-auxiliary-items)
-3. Once your triggers are created, export all the module's triggers, as well as the ones you wish to add, into a file (or copy them to clipboard.)
-4. Submit the contents of that file as a PR to update `pf2e-trigger-trove.json`.
+    - If you need to access one of the module's subtriggers, you will need to import it from `pf2e-trigger-trove.json` while making sure to check the **KEEP IDS** box.
+2. Once your triggers are created, export all triggers and subtriggers you want to submit.
+3. Create a JSON file containing either
+    - A single trigger object, if you're only submitting one trigger
+    - An array of trigger objects, if you're submitting multiple triggers (for example, Aura Entered and Turn Started triggers are a common combo)
+4. Name the file after the rule you're automating in kebab-case (for example `thermal-nimbus.json`), and place it in the most fitting folder in the `/triggers/` directory. Create a new one if none fit.
+5. Submit your PR!
 
 ### Adding Auxiliary Items
 
