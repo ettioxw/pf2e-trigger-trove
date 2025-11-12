@@ -80,9 +80,19 @@ jobs:
         id: get_version
         uses: battila7/get-version-action@v2
 
+         # Install dependencies needed for pack compilation
+      - name: Install Dependencies
+        run: npm install @foundryvtt/foundryvtt-cli
+
+
+      # Build
+      - name: Build
+        run: node ./scripts/build-packs.js
+
       # Combine individual trigger files into a single file
       - name: Combine Trigger Files
         run: node ./scripts/combine-triggers.js
+
 
       # Modify "module.json" with values specific to the release.
       # Since the values for the "version" and "url" keys aren't known ahead of
@@ -121,7 +131,6 @@ jobs:
             main.js                              \
             triggers/pf2e-trigger-trove.json     \
             templates/                           \
-            scripts/                             \
             styles/                              \
             packs/                               \
             lang/                                \
