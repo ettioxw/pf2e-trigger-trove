@@ -89,7 +89,7 @@ jobs:
 
                   // Configuration
                   const triggersDir = './triggers';
-                  const outputFile = './triggers.json';
+                  const outputFile = './triggers/pf2e-trigger-trove.json';
 
                   // Initialize the combined structure
                   const combined = {
