@@ -42,6 +42,7 @@ const files = [
   "module.json",
   "README.md",
   "LICENSE",
+  "CHANGELOG.md"
 ];
 for (const file of files) {
   await fs.cp(file, path.resolve(outDir, file), { recursive: true });
