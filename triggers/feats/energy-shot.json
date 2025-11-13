@@ -1,7 +1,7 @@
 [
     {
         "_id": "VMKwpFghlw45EFkv",
-        "description": "<p>After confirming that Energy Shot is used, adds an effect that applies the chosen damage type on the first three strikes this encounter.</p><p>Adds the Energy Shot auxiliary effect </p>",
+        "description": "<p>After confirming that Energy Shot is used, add its damage effect as well as an auxiliary effect to automatically track the shots as a Special Resource.</p>",
         "folder": "Feats & Features",
         "name": "Energy Shot (Combatant Joined)",
         "nodes": [
@@ -66,7 +66,7 @@
                     },
                     "prompt": {
                         "ids": [],
-                        "value": "<p>Are you using Energy Shot?</p>"
+                        "value": "<p>Are you using Energy Shot in this combat?</p>"
                     },
                     "title": {
                         "ids": [
@@ -118,6 +118,10 @@
             {
                 "_id": "DMDEONklghatRka9",
                 "inputs": {
+                    "duplicate": {
+                        "ids": [],
+                        "value": false
+                    },
                     "in": {
                         "ids": [
                             "ykasJja9Wd3goLfD.outputs.true"
@@ -130,8 +134,8 @@
                 },
                 "key": "create-item",
                 "position": {
-                    "x": 1182,
-                    "y": 207.75
+                    "x": 1144,
+                    "y": 205.75
                 },
                 "type": "action"
             }
@@ -139,7 +143,7 @@
     },
     {
         "_id": "UBXbzTygXDXgt69l",
-        "description": "<p>If Energy Shot is active, reduces Energy Shots resource by 1 after striking. If Energy Shots is already at 0, it removes the Energy Shot axuiliary effect.</p>",
+        "description": "<p>If the attacker has the Energy Shot auxiliary effect, deplete the Energy Shots resource by 1 after attacking with a crossbow or firearm. If there are no more Energy Shots left, remove the effect automatically.</p>",
         "folder": "Feats & Features",
         "name": "Energy Shot (Attack Rolled)",
         "nodes": [
@@ -152,8 +156,7 @@
                     },
                     "options": {
                         "ids": [
-                            "6XLKlqwDqo61bb7x.inputs.list",
-                            "gBVugVMJAIXl2nxn.inputs.list"
+                            "ID6MmWZSq3rnRi87.inputs.list"
                         ]
                     },
                     "other": {
@@ -161,7 +164,7 @@
                     },
                     "out": {
                         "ids": [
-                            "6XLKlqwDqo61bb7x.inputs.in"
+                            "ID6MmWZSq3rnRi87.inputs.in"
                         ]
                     },
                     "this": {
@@ -179,8 +182,7 @@
                 "inputs": {
                     "in": {
                         "ids": [
-                            "6XLKlqwDqo61bb7x.outputs.true",
-                            "gBVugVMJAIXl2nxn.outputs.true"
+                            "ID6MmWZSq3rnRi87.outputs.true"
                         ]
                     },
                     "target": {
@@ -205,8 +207,8 @@
                     }
                 },
                 "position": {
-                    "x": 1062.5,
-                    "y": 183.75
+                    "x": 775.5,
+                    "y": 196.75
                 },
                 "type": "condition"
             },
@@ -219,13 +221,12 @@
                         ]
                     },
                     "slug": {
-                        "ids": [],
-                        "value": "energy-shots"
+                        "ids": [
+                            "Sj9CY6BBP9WmGsEK.outputs.value"
+                        ]
                     },
                     "target": {
-                        "ids": [
-                            "eiLFhshd0S8IMJxF.outputs.output"
-                        ]
+                        "ids": []
                     }
                 },
                 "key": "reduce-resource",
@@ -238,79 +239,10 @@
                     }
                 },
                 "position": {
-                    "x": 1785,
-                    "y": 300.75
+                    "x": 1499,
+                    "y": 301.75
                 },
                 "type": "action"
-            },
-            {
-                "_id": "6XLKlqwDqo61bb7x",
-                "inputs": {
-                    "in": {
-                        "ids": [
-                            "DHkQjZtDuaIROU0t.outputs.out"
-                        ]
-                    },
-                    "list": {
-                        "ids": [
-                            "DHkQjZtDuaIROU0t.outputs.options"
-                        ]
-                    },
-                    "predicate": {
-                        "ids": [],
-                        "value": "[\"item:group:firearm\"]"
-                    }
-                },
-                "key": "match-predicate",
-                "outputs": {
-                    "false": {
-                        "ids": [
-                            "gBVugVMJAIXl2nxn.inputs.in"
-                        ]
-                    },
-                    "true": {
-                        "ids": [
-                            "UeXRYyx6nVixS7ie.inputs.in"
-                        ]
-                    }
-                },
-                "position": {
-                    "x": 561.5,
-                    "y": 200.25
-                },
-                "type": "condition"
-            },
-            {
-                "_id": "gBVugVMJAIXl2nxn",
-                "inputs": {
-                    "in": {
-                        "ids": [
-                            "6XLKlqwDqo61bb7x.outputs.false"
-                        ]
-                    },
-                    "list": {
-                        "ids": [
-                            "DHkQjZtDuaIROU0t.outputs.options"
-                        ]
-                    },
-                    "predicate": {
-                        "ids": [],
-                        "value": "[\n  \"item:group:crossbow\"\n]"
-                    }
-                },
-                "key": "match-predicate",
-                "outputs": {
-                    "true": {
-                        "ids": [
-                            "UeXRYyx6nVixS7ie.inputs.in"
-                        ]
-                    }
-                },
-                "position": {
-                    "x": 815,
-                    "y": 296.75
-                },
-                "type": "condition"
             },
             {
                 "_id": "ZxYAhMdMtWHuc0pb",
@@ -336,8 +268,8 @@
                     }
                 },
                 "position": {
-                    "x": 1092,
-                    "y": 324.75
+                    "x": 812,
+                    "y": 344.75
                 },
                 "target": "DHkQjZtDuaIROU0t.outputs.this",
                 "type": "variable"
@@ -351,8 +283,9 @@
                         ]
                     },
                     "slug": {
-                        "ids": [],
-                        "value": "energy-shots"
+                        "ids": [
+                            "Sj9CY6BBP9WmGsEK.outputs.value"
+                        ]
                     },
                     "target": {
                         "ids": [
@@ -377,8 +310,8 @@
                     }
                 },
                 "position": {
-                    "x": 1297,
-                    "y": 185.75
+                    "x": 1013,
+                    "y": 197.75
                 },
                 "type": "action"
             },
@@ -410,8 +343,8 @@
                     }
                 },
                 "position": {
-                    "x": 1565,
-                    "y": 219.75
+                    "x": 1282,
+                    "y": 215.75
                 },
                 "type": "logic"
             },
@@ -424,9 +357,7 @@
                         ]
                     },
                     "target": {
-                        "ids": [
-                            "eiLFhshd0S8IMJxF.outputs.output"
-                        ]
+                        "ids": []
                     },
                     "uuid": {
                         "ids": [],
@@ -435,40 +366,65 @@
                 },
                 "key": "remove-item",
                 "position": {
-                    "x": 1782,
-                    "y": 154.75
+                    "x": 1501,
+                    "y": 160.75
                 },
                 "type": "action"
             },
             {
-                "_id": "eiLFhshd0S8IMJxF",
-                "custom": {
-                    "inputs": [],
-                    "outputs": [
-                        {
-                            "custom": false,
-                            "group": "",
-                            "key": "output",
-                            "type": "target"
-                        }
-                    ],
-                    "outs": []
-                },
-                "key": "variable-getter",
-                "outputs": {
-                    "output": {
+                "_id": "ID6MmWZSq3rnRi87",
+                "inputs": {
+                    "in": {
                         "ids": [
-                            "aKNEwYbXQHZDKx97.inputs.target",
-                            "EaKbpFNgFIh3ElBO.inputs.target"
+                            "DHkQjZtDuaIROU0t.outputs.out"
+                        ]
+                    },
+                    "list": {
+                        "ids": [
+                            "DHkQjZtDuaIROU0t.outputs.options"
+                        ]
+                    },
+                    "predicate": {
+                        "ids": [],
+                        "value": "[\n  {\n    \"or\": [\n      \"item:group:crossbow\",\n      \"item:group:firearm\"\n    ]\n  }\n]"
+                    }
+                },
+                "key": "match-predicate",
+                "outputs": {
+                    "true": {
+                        "ids": [
+                            "UeXRYyx6nVixS7ie.inputs.in"
                         ]
                     }
                 },
                 "position": {
-                    "x": 1567,
-                    "y": 379.75
+                    "x": 533,
+                    "y": 197.75
                 },
-                "target": "DHkQjZtDuaIROU0t.outputs.this",
-                "type": "variable"
+                "type": "condition"
+            },
+            {
+                "_id": "Sj9CY6BBP9WmGsEK",
+                "inputs": {
+                    "input": {
+                        "ids": [],
+                        "value": "energy-shots"
+                    }
+                },
+                "key": "text-value",
+                "outputs": {
+                    "value": {
+                        "ids": [
+                            "5c0oXrHnoIafpgUY.inputs.slug",
+                            "aKNEwYbXQHZDKx97.inputs.slug"
+                        ]
+                    }
+                },
+                "position": {
+                    "x": 1010.5,
+                    "y": 358.25
+                },
+                "type": "value"
             }
         ]
     }

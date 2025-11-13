@@ -3,7 +3,7 @@
   "name": "Aux Effect: Energy Shot",
   "system": {
     "description": {
-      "value": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.TSDbyYRQwhIyY2Oq]{Energy Shot}</p>\n<p>On your first three Strikes of this encounter with a firearm or crossbow, you deal an additional 1 acid, cold, fire or electricity damage. You choose which damage type to deal as part of making each Strike.</p>",
+      "value": "<p>Auxiliary effect for @UUID[Compendium.pf2e.actionspf2e.Item.TSDbyYRQwhIyY2Oq]{Energy Shot}</p><p>This effect grants you @UUID[Compendium.pf2e.feat-effects.Item.zocU4IYIlWwRKUuE]{Effect: Energy Shot}, and keeps track of your number of Energy Shot uses. After firing your last Energy Shot, both effects will be removed.</p>",
       "gm": ""
     },
     "duration": {
@@ -23,46 +23,13 @@
     },
     "rules": [
       {
-        "choices": [
-          {
-            "label": "PF2E.TraitAcid",
-            "value": "acid"
-          },
-          {
-            "label": "PF2E.TraitCold",
-            "value": "cold"
-          },
-          {
-            "label": "PF2E.TraitElectricity",
-            "value": "electricity"
-          },
-          {
-            "label": "PF2E.TraitFire",
-            "value": "fire"
-          }
-        ],
-        "flag": "energyShot",
-        "key": "ChoiceSet",
-        "prompt": "PF2E.SpecificRule.Prompt.EnergyType"
-      },
-      {
-        "damageType": "{item|flags.pf2e.rulesSelections.energyShot}",
-        "key": "FlatModifier",
-        "predicate": [
-          {
-            "or": [
-              "item:group:firearm",
-              "item:group:crossbow"
-            ]
-          }
-        ],
-        "selector": "strike-damage",
-        "value": "@weapon.system.damage.dice"
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.feat-effects.Item.zocU4IYIlWwRKUuE"
       },
       {
         "key": "SpecialResource",
         "label": "Energy Shots",
-        "max": "3",
+        "max": 3,
         "slug": "energy-shots"
       }
     ],
@@ -107,3 +74,4 @@
   "sort": 200000,
   "_key": "!items!8awQu81nSawdU8WM"
 }
+
