@@ -9,7 +9,9 @@
       "key": "damage-taken",
       "outputs": {
         "out": {
-          "ids": ["ZsKsIiW4VkSU78k5.inputs.in"]
+          "ids": [
+            "miT5CqI6GGFJjJ7Z.inputs.in"
+          ]
         }
       },
       "position": {
@@ -19,22 +21,146 @@
       "type": "event"
     },
     {
-      "_id": "ZsKsIiW4VkSU78k5",
+      "_id": "miT5CqI6GGFJjJ7Z",
       "inputs": {
         "in": {
-          "ids": ["nOggEquouUTiOKnh.outputs.out"]
+          "ids": [
+            "nOggEquouUTiOKnh.outputs.out"
+          ]
         },
         "uuid": {
           "ids": [],
           "value": "Compendium.pf2e.feat-effects.Item.DawVHfoPKbPJsz4k"
         }
       },
-      "key": "remove-item",
+      "key": "has-item",
+      "outputs": {
+        "true": {
+          "ids": [
+            "2qc5e3gJ4AbDvhZW.inputs.in"
+          ]
+        }
+      },
       "position": {
-        "x": 567,
-        "y": 198.75
+        "x": 543,
+        "y": 199.75
+      },
+      "type": "condition"
+    },
+    {
+      "_id": "2qc5e3gJ4AbDvhZW",
+      "inputs": {
+        "in": {
+          "ids": [
+            "miT5CqI6GGFJjJ7Z.outputs.true"
+          ]
+        },
+        "input": {
+          "ids": [
+            "sOdeasU0MfWtkt2L.outputs.output"
+          ]
+        }
+      },
+      "key": "boolean-splitter",
+      "outputs": {
+        "false": {
+          "ids": [
+            "lmZBDgldS8ns7XsC.inputs.in"
+          ]
+        }
+      },
+      "position": {
+        "x": 809,
+        "y": 217.75
+      },
+      "type": "splitter"
+    },
+    {
+      "_id": "sOdeasU0MfWtkt2L",
+      "custom": {
+        "inputs": [],
+        "outputs": [
+          {
+            "custom": false,
+            "group": "",
+            "key": "output",
+            "type": "boolean"
+          }
+        ],
+        "outs": []
+      },
+      "key": "variable-getter",
+      "outputs": {
+        "output": {
+          "ids": [
+            "2qc5e3gJ4AbDvhZW.inputs.input"
+          ]
+        }
+      },
+      "position": {
+        "x": 715.5,
+        "y": 332.25
+      },
+      "target": "nOggEquouUTiOKnh.outputs.heal",
+      "type": "variable"
+    },
+    {
+      "_id": "lmZBDgldS8ns7XsC",
+      "inputs": {
+        "in": {
+          "ids": [
+            "2qc5e3gJ4AbDvhZW.outputs.false"
+          ]
+        },
+        "item": {
+          "ids": [
+            "UQpMTJ5ATW6Fwngz.outputs.output"
+          ]
+        }
+      },
+      "key": "delete-item",
+      "position": {
+        "x": 1012,
+        "y": 227.75
       },
       "type": "action"
+    },
+    {
+      "_id": "UQpMTJ5ATW6Fwngz",
+      "custom": {
+        "inputs": [],
+        "outputs": [
+          {
+            "custom": false,
+            "group": "",
+            "key": "output",
+            "type": "item"
+          }
+        ],
+        "outs": []
+      },
+      "key": "variable-getter",
+      "outputs": {
+        "output": {
+          "ids": [
+            "lmZBDgldS8ns7XsC.inputs.item"
+          ]
+        }
+      },
+      "position": {
+        "x": 838.5,
+        "y": 335.25
+      },
+      "target": "miT5CqI6GGFJjJ7Z.outputs.item",
+      "type": "variable"
     }
-  ]
+  ],
+  "variables": {
+    "miT5CqI6GGFJjJ7Z.outputs.item": {
+      "global": false,
+      "label": "Champion's Resistance",
+      "locked": false,
+      "type": "item"
+    }
+  }
 }
