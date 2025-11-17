@@ -1,8 +1,8 @@
 {
-    "_id": "xtZCghvcDeL2xQNs",
-    "description": "<p>If the attacked creature has @UUID[Item.t2hCMAEnFnqy9ITP]{Aux Effect: Mirror Image}, automatically reduce the Trickster's Mirrors resource depending on both the outcome of the attack and a randomly generated number, as described by the spell. If the attacker is within 5 feet, roll damage when a mirror is destroyed.</p><p>It's recommended that the auxiliary effect is added to the spell's description for easy access.</p>",
+    "_id": "14kEtJItBbFlopQQ",
+    "description": "<p>If the attacked creature has @UUID[Compendium.pf2e-trigger-trove.auxiliary-items.Item.5SRB25GYB5GwWVJG]{Aux Effect: Mirror Image}, automatically reduce the Mirror Images resource depending on both the outcome of the attack and a randomly generated number, as described by the spell.</p><p>It's recommended that the auxiliary effect is added to the spell's description for easy access, and used instead of the system-provided effect.</p>",
     "folder": "Spells",
-    "name": "Trickster's Mirrors (Attack Rolled)",
+    "name": "Mirror Image (Attack Rolled)",
     "nodes": [
         {
             "_id": "hS2l2CKpknfJGdb8",
@@ -40,20 +40,20 @@
                 },
                 "uuid": {
                     "ids": [],
-                    "value": "Compendium.pf2e-trigger-trove.auxiliary-items.Item.SlgTXSJRSL5UplfQ"
+                    "value": "Compendium.pf2e-trigger-trove.auxiliary-items.Item.pnSHABS9FZvExLa9"
                 }
             },
             "key": "has-item",
             "outputs": {
                 "true": {
                     "ids": [
-                        "Jimli45APh8UirgI.inputs.in"
+                        "LAJhnVbnHYKA83kT.inputs.in"
                     ]
                 }
             },
             "position": {
-                "x": 542,
-                "y": 226.75
+                "x": 638,
+                "y": 225.75
             },
             "type": "condition"
         },
@@ -68,7 +68,7 @@
                 },
                 "slug": {
                     "ids": [],
-                    "value": "tricksters-mirrors"
+                    "value": "mirror-images"
                 },
                 "target": {
                     "ids": [
@@ -90,8 +90,8 @@
                 }
             },
             "position": {
-                "x": 1493,
-                "y": 340.75
+                "x": 1374,
+                "y": 336.75
             },
             "type": "action"
         },
@@ -118,8 +118,8 @@
                 }
             },
             "position": {
-                "x": 1340.5,
-                "y": 497.25
+                "x": 1218.5,
+                "y": 482.25
             },
             "target": "hS2l2CKpknfJGdb8.outputs.other",
             "type": "variable"
@@ -129,7 +129,7 @@
             "inputs": {
                 "in": {
                     "ids": [
-                        "uXcocAe16OzCFCJG.outputs.true"
+                        "WdXL5h0Td0hJ77rr.outputs.true"
                     ]
                 },
                 "input": {
@@ -157,8 +157,8 @@
                 }
             },
             "position": {
-                "x": 1238.5,
-                "y": 243
+                "x": 1024.5,
+                "y": 239
             },
             "type": "splitter"
         },
@@ -185,8 +185,8 @@
                 }
             },
             "position": {
-                "x": 1111.5,
-                "y": 374.25
+                "x": 867.5,
+                "y": 371.25
             },
             "target": "hS2l2CKpknfJGdb8.outputs.outcome",
             "type": "variable"
@@ -223,8 +223,8 @@
                 }
             },
             "position": {
-                "x": 1767,
-                "y": 431.75
+                "x": 1686,
+                "y": 398.75
             },
             "type": "action"
         },
@@ -260,8 +260,8 @@
                 }
             },
             "position": {
-                "x": 2302,
-                "y": 437.75
+                "x": 2237,
+                "y": 424.75
             },
             "type": "action"
         },
@@ -293,8 +293,8 @@
                 }
             },
             "position": {
-                "x": 2021.3899999999999,
-                "y": 441.24
+                "x": 1967.3899999999999,
+                "y": 423.24
             },
             "type": "action"
         },
@@ -330,8 +330,8 @@
                 }
             },
             "position": {
-                "x": 2547,
-                "y": 453.75
+                "x": 2487,
+                "y": 439.75
             },
             "type": "logic"
         },
@@ -345,7 +345,7 @@
                 },
                 "message": {
                     "ids": [],
-                    "value": "<p><strong>Trickster's Mirror</strong> The attack hits you! All your mirrors remain.</p>"
+                    "value": "<p><strong>Mirror Image</strong> The attack hits you! All your mirror images remain.</p>"
                 },
                 "target": {
                     "ids": [
@@ -355,8 +355,8 @@
             },
             "key": "create-message",
             "position": {
-                "x": 2793,
-                "y": 477.75
+                "x": 2745,
+                "y": 484.75
             },
             "type": "action"
         },
@@ -365,12 +365,12 @@
             "inputs": {
                 "in": {
                     "ids": [
-                        "H5Cl1yiSBiEERF3S.outputs.false"
+                        "xUJ0eF4yWIua74TO.outputs.out"
                     ]
                 },
                 "message": {
                     "ids": [],
-                    "value": "<p><strong>Trickster's Mirror</strong> The attack misses you! One of your mirrors is destroyed.</p>"
+                    "value": "<p><strong>Mirror Image</strong> The attack misses you! One of your mirror images is destroyed.</p>"
                 },
                 "target": {
                     "ids": [
@@ -381,12 +381,14 @@
             "key": "create-message",
             "outputs": {
                 "out": {
-                    "ids": []
+                    "ids": [
+                        "g2HNdjstqOA6BxUF.inputs.in"
+                    ]
                 }
             },
             "position": {
-                "x": 3777,
-                "y": 419.75
+                "x": 3020,
+                "y": 249.75
             },
             "type": "action"
         },
@@ -401,7 +403,7 @@
                 },
                 "slug": {
                     "ids": [],
-                    "value": "tricksters-mirrors"
+                    "value": "mirror-images"
                 },
                 "target": {
                     "ids": [
@@ -413,13 +415,13 @@
             "outputs": {
                 "out": {
                     "ids": [
-                        "XsMZUTPCapzamquC.inputs.in"
+                        "2fBEBKwImEWthqUb.inputs.in"
                     ]
                 }
             },
             "position": {
-                "x": 2792,
-                "y": 255.75
+                "x": 2758,
+                "y": 249.75
             },
             "type": "action"
         },
@@ -446,173 +448,10 @@
                 }
             },
             "position": {
-                "x": 2804.5,
-                "y": 617.25
+                "x": 2725.5,
+                "y": 629.25
             },
             "target": "hS2l2CKpknfJGdb8.outputs.other",
-            "type": "variable"
-        },
-        {
-            "_id": "WqC4kcUG2LBHf6rd",
-            "inputs": {
-                "basic": {
-                    "ids": [],
-                    "value": true
-                },
-                "dc": {
-                    "ids": []
-                },
-                "formula": {
-                    "ids": [],
-                    "value": "(ceil(@actor.level / 2))d4[mental]"
-                },
-                "in": {
-                    "ids": [
-                        "H5Cl1yiSBiEERF3S.outputs.true"
-                    ]
-                },
-                "roll": {
-                    "ids": [
-                        "BdZRIveKt3thrLfM.outputs.roll"
-                    ]
-                },
-                "save": {
-                    "ids": [],
-                    "value": "will"
-                }
-            },
-            "key": "roll-damage-save",
-            "position": {
-                "x": 3771,
-                "y": -10.25
-            },
-            "type": "action"
-        },
-        {
-            "_id": "BdZRIveKt3thrLfM",
-            "inputs": {
-                "item": {
-                    "ids": [
-                        "mh2LPdmHG4fUmK5W.outputs.item"
-                    ]
-                },
-                "note": {
-                    "ids": [],
-                    "value": "<p>The attack misses you! One of your mirrors is destroyed. If the attacker was within 5 feet, they must succeed at a @Check[will|basic|options:item:type:spell|traits:animist,focus,illusion,mental,visual] save or take mental damage as they believe themselves cut by a shower of glass shards from the breaking mirror.</p>"
-                },
-                "options": {
-                    "ids": []
-                },
-                "origin": {
-                    "ids": [
-                        "CFzsn9RkQMlRj539.outputs.output"
-                    ]
-                },
-                "traits": {
-                    "ids": []
-                }
-            },
-            "key": "roll-data",
-            "outputs": {
-                "roll": {
-                    "ids": [
-                        "WqC4kcUG2LBHf6rd.inputs.roll"
-                    ]
-                }
-            },
-            "position": {
-                "x": 3493.5,
-                "y": 34.25
-            },
-            "type": "value"
-        },
-        {
-            "_id": "mh2LPdmHG4fUmK5W",
-            "inputs": {
-                "uuid": {
-                    "ids": [],
-                    "value": "Compendium.pf2e.spells-srd.Item.cuKVbWWNzJj1GDpZ"
-                }
-            },
-            "key": "item-source",
-            "outputs": {
-                "item": {
-                    "ids": [
-                        "BdZRIveKt3thrLfM.inputs.item"
-                    ]
-                }
-            },
-            "position": {
-                "x": 3262.5,
-                "y": 130.25
-            },
-            "type": "value"
-        },
-        {
-            "_id": "XsMZUTPCapzamquC",
-            "inputs": {
-                "a": {
-                    "ids": [
-                        "Um4EhLWvcOH40Mig.outputs.output"
-                    ]
-                },
-                "b": {
-                    "ids": [
-                        "Kz8Kx5XCEhNg3sbk.outputs.output"
-                    ]
-                },
-                "in": {
-                    "ids": [
-                        "xUJ0eF4yWIua74TO.outputs.out"
-                    ]
-                }
-            },
-            "key": "distance-between",
-            "outputs": {
-                "distance": {
-                    "ids": [
-                        "H5Cl1yiSBiEERF3S.inputs.a"
-                    ]
-                },
-                "out": {
-                    "ids": [
-                        "H5Cl1yiSBiEERF3S.inputs.in"
-                    ]
-                }
-            },
-            "position": {
-                "x": 3230.5,
-                "y": 249.25
-            },
-            "type": "action"
-        },
-        {
-            "_id": "Kz8Kx5XCEhNg3sbk",
-            "custom": {
-                "inputs": [],
-                "outputs": [
-                    {
-                        "custom": false,
-                        "group": "",
-                        "key": "output",
-                        "type": "target"
-                    }
-                ],
-                "outs": []
-            },
-            "key": "variable-getter",
-            "outputs": {
-                "output": {
-                    "ids": [
-                        "XsMZUTPCapzamquC.inputs.b"
-                    ]
-                }
-            },
-            "position": {
-                "x": 3114.5,
-                "y": 388.25
-            },
-            "target": "hS2l2CKpknfJGdb8.outputs.this",
             "type": "variable"
         },
         {
@@ -633,80 +472,14 @@
             "outputs": {
                 "output": {
                     "ids": [
-                        "XsMZUTPCapzamquC.inputs.a",
-                        "2fBEBKwImEWthqUb.inputs.target"
+                        "2fBEBKwImEWthqUb.inputs.target",
+                        "g2HNdjstqOA6BxUF.inputs.target"
                     ]
                 }
             },
             "position": {
-                "x": 3155.5,
-                "y": 430.25
-            },
-            "target": "hS2l2CKpknfJGdb8.outputs.other",
-            "type": "variable"
-        },
-        {
-            "_id": "H5Cl1yiSBiEERF3S",
-            "inputs": {
-                "a": {
-                    "ids": [
-                        "XsMZUTPCapzamquC.outputs.distance"
-                    ]
-                },
-                "b": {
-                    "ids": [],
-                    "value": 5
-                },
-                "in": {
-                    "ids": [
-                        "XsMZUTPCapzamquC.outputs.out"
-                    ]
-                }
-            },
-            "key": "lte-number",
-            "outputs": {
-                "false": {
-                    "ids": [
-                        "2fBEBKwImEWthqUb.inputs.in"
-                    ]
-                },
-                "true": {
-                    "ids": [
-                        "WqC4kcUG2LBHf6rd.inputs.in"
-                    ]
-                }
-            },
-            "position": {
-                "x": 3466,
-                "y": 270.75
-            },
-            "type": "logic"
-        },
-        {
-            "_id": "CFzsn9RkQMlRj539",
-            "custom": {
-                "inputs": [],
-                "outputs": [
-                    {
-                        "custom": false,
-                        "group": "",
-                        "key": "output",
-                        "type": "target"
-                    }
-                ],
-                "outs": []
-            },
-            "key": "variable-getter",
-            "outputs": {
-                "output": {
-                    "ids": [
-                        "BdZRIveKt3thrLfM.inputs.origin"
-                    ]
-                }
-            },
-            "position": {
-                "x": 3322.5,
-                "y": 87.25
+                "x": 3017.5,
+                "y": 396.25
             },
             "target": "hS2l2CKpknfJGdb8.outputs.other",
             "type": "variable"
@@ -741,20 +514,20 @@
             "type": "variable"
         },
         {
-            "_id": "Jimli45APh8UirgI",
+            "_id": "g2HNdjstqOA6BxUF",
             "inputs": {
                 "in": {
                     "ids": [
-                        "WdXL5h0Td0hJ77rr.outputs.true"
+                        "2fBEBKwImEWthqUb.outputs.out"
                     ]
                 },
                 "slug": {
                     "ids": [],
-                    "value": "tricksters-mirrors"
+                    "value": "mirror-images"
                 },
                 "target": {
                     "ids": [
-                        "228CEq35mphQ1k6j.outputs.output"
+                        "Um4EhLWvcOH40Mig.outputs.output"
                     ]
                 }
             },
@@ -762,23 +535,72 @@
             "outputs": {
                 "out": {
                     "ids": [
-                        "uXcocAe16OzCFCJG.inputs.in"
+                        "Zk5H7BqTPe0wdAnn.inputs.in"
                     ]
                 },
                 "value": {
                     "ids": [
-                        "uXcocAe16OzCFCJG.inputs.a"
+                        "Zk5H7BqTPe0wdAnn.inputs.a"
                     ]
                 }
             },
             "position": {
-                "x": 779,
-                "y": 222.75
+                "x": 3260,
+                "y": 249.75
             },
             "type": "action"
         },
         {
-            "_id": "228CEq35mphQ1k6j",
+            "_id": "Zk5H7BqTPe0wdAnn",
+            "inputs": {
+                "a": {
+                    "ids": [
+                        "g2HNdjstqOA6BxUF.outputs.value"
+                    ]
+                },
+                "in": {
+                    "ids": [
+                        "g2HNdjstqOA6BxUF.outputs.out"
+                    ]
+                }
+            },
+            "key": "eq-number",
+            "outputs": {
+                "true": {
+                    "ids": [
+                        "9gua674XfZe2OjIz.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 3554.5,
+                "y": 294.75
+            },
+            "type": "logic"
+        },
+        {
+            "_id": "9gua674XfZe2OjIz",
+            "inputs": {
+                "in": {
+                    "ids": [
+                        "Zk5H7BqTPe0wdAnn.outputs.true"
+                    ]
+                },
+                "item": {
+                    "ids": [
+                        "f5cKVS6PNBCiJL80.outputs.output"
+                    ]
+                }
+            },
+            "key": "delete-item",
+            "position": {
+                "x": 3761,
+                "y": 278.75
+            },
+            "type": "action"
+        },
+        {
+            "_id": "f5cKVS6PNBCiJL80",
             "custom": {
                 "inputs": [],
                 "outputs": [
@@ -786,54 +608,33 @@
                         "custom": false,
                         "group": "",
                         "key": "output",
-                        "type": "target"
+                        "type": "item"
                     }
                 ],
                 "outs": []
             },
-            "inputs": {},
             "key": "variable-getter",
             "outputs": {
                 "output": {
                     "ids": [
-                        "Jimli45APh8UirgI.inputs.target"
+                        "9gua674XfZe2OjIz.inputs.item"
                     ]
                 }
             },
             "position": {
-                "x": 629.5,
-                "y": 354.25
+                "x": 3737.5,
+                "y": 411.25
             },
-            "target": "hS2l2CKpknfJGdb8.outputs.other",
+            "target": "WdXL5h0Td0hJ77rr.outputs.item",
             "type": "variable"
-        },
-        {
-            "_id": "uXcocAe16OzCFCJG",
-            "inputs": {
-                "a": {
-                    "ids": [
-                        "Jimli45APh8UirgI.outputs.value"
-                    ]
-                },
-                "in": {
-                    "ids": [
-                        "Jimli45APh8UirgI.outputs.out"
-                    ]
-                }
-            },
-            "key": "gt-number",
-            "outputs": {
-                "true": {
-                    "ids": [
-                        "LAJhnVbnHYKA83kT.inputs.in"
-                    ]
-                }
-            },
-            "position": {
-                "x": 1052,
-                "y": 238.75
-            },
-            "type": "logic"
         }
-    ]
+    ],
+    "variables": {
+        "WdXL5h0Td0hJ77rr.outputs.item": {
+            "global": false,
+            "label": "Aux Effect",
+            "locked": false,
+            "type": "item"
+        }
+    }
 }
