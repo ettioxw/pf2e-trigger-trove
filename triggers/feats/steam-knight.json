@@ -1,0 +1,547 @@
+{
+    "_id": "E4S5YdgxAPJeZnYh",
+    "description": "<p>If there is an enemy within a kinetic aura while the aura source is in @UUID[Compendium.pf2e.feats-srd.Item.7PjBANpMMoBxTYq3]{Steam Knight} stance, roll damage automatically, along with a note with a reminder of the free action they can use to deal this damage and the necessary saving throw for the damage targets.</p>",
+    "folder": "Feats & Features",
+    "name": "Steam Knight (Turn Started)",
+    "nodes": [
+        {
+            "_id": "RuDsbE2sXw6FKxYB",
+            "key": "turn-start",
+            "outputs": {
+                "out": {
+                    "ids": [
+                        "IZQrEFO5WI2ZRp3a.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 350,
+                "y": 200
+            },
+            "type": "event"
+        },
+        {
+            "_id": "oJoLfkzu2efQOzkI",
+            "inputs": {
+                "in": {
+                    "ids": [
+                        "IZQrEFO5WI2ZRp3a.outputs.true"
+                    ]
+                }
+            },
+            "key": "scene-tokens",
+            "outputs": {
+                "other": {
+                    "ids": [
+                        "dV8ZuRCbXbxaIEOM.inputs.target"
+                    ]
+                },
+                "out": {
+                    "ids": [
+                        "dV8ZuRCbXbxaIEOM.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 778,
+                "y": 273.23
+            },
+            "type": "action"
+        },
+        {
+            "_id": "dV8ZuRCbXbxaIEOM",
+            "inputs": {
+                "in": {
+                    "ids": [
+                        "oJoLfkzu2efQOzkI.outputs.out"
+                    ]
+                },
+                "slug": {
+                    "ids": [],
+                    "value": "kinetic-aura"
+                },
+                "target": {
+                    "ids": [
+                        "oJoLfkzu2efQOzkI.outputs.other"
+                    ]
+                },
+                "targets": {
+                    "ids": [],
+                    "value": "enemies"
+                }
+            },
+            "key": "inside-aura",
+            "outputs": {
+                "source": {
+                    "ids": [
+                        "t6Jw4cjUoEgfW3dP.inputs.a"
+                    ]
+                },
+                "true": {
+                    "ids": [
+                        "t6Jw4cjUoEgfW3dP.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 968.5,
+                "y": 285.23
+            },
+            "type": "condition"
+        },
+        {
+            "_id": "t6Jw4cjUoEgfW3dP",
+            "inputs": {
+                "a": {
+                    "ids": [
+                        "dV8ZuRCbXbxaIEOM.outputs.source"
+                    ]
+                },
+                "b": {
+                    "ids": [
+                        "jWdr4z29WZsJvaOS.outputs.output"
+                    ]
+                },
+                "in": {
+                    "ids": [
+                        "dV8ZuRCbXbxaIEOM.outputs.true"
+                    ]
+                }
+            },
+            "key": "eq-actor",
+            "outputs": {
+                "true": {
+                    "ids": [
+                        "7eRNKkNoN5dZqP6q.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 1289,
+                "y": 341.75
+            },
+            "type": "logic"
+        },
+        {
+            "_id": "IZQrEFO5WI2ZRp3a",
+            "inputs": {
+                "in": {
+                    "ids": [
+                        "RuDsbE2sXw6FKxYB.outputs.out"
+                    ]
+                },
+                "uuid": {
+                    "ids": [],
+                    "value": "Compendium.pf2e.feat-effects.Item.cmCLIMgtd4TLA23p"
+                }
+            },
+            "key": "has-item",
+            "outputs": {
+                "true": {
+                    "ids": [
+                        "oJoLfkzu2efQOzkI.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 539,
+                "y": 228.75
+            },
+            "type": "condition"
+        },
+        {
+            "_id": "jWdr4z29WZsJvaOS",
+            "custom": {
+                "inputs": [],
+                "outputs": [
+                    {
+                        "custom": false,
+                        "group": "",
+                        "key": "output",
+                        "type": "target"
+                    }
+                ],
+                "outs": []
+            },
+            "key": "variable-getter",
+            "outputs": {
+                "output": {
+                    "ids": [
+                        "t6Jw4cjUoEgfW3dP.inputs.b"
+                    ]
+                }
+            },
+            "position": {
+                "x": 1105.5,
+                "y": 452.25
+            },
+            "target": "RuDsbE2sXw6FKxYB.outputs.this",
+            "type": "variable"
+        },
+        {
+            "_id": "HV0Om2ZO32n83dOb",
+            "inputs": {
+                "formula": {
+                    "ids": [
+                        "6DF9BrlIG0yQVPLX.outputs.output"
+                    ]
+                },
+                "in": {
+                    "ids": [
+                        "ZzGh877LtxaQXxHe.outputs.out"
+                    ]
+                },
+                "roll": {
+                    "ids": [
+                        "Wm6aradk2tpyvZ1A.outputs.roll"
+                    ]
+                },
+                "target": {
+                    "ids": []
+                }
+            },
+            "key": "roll-damage",
+            "outputs": {
+                "out": {
+                    "ids": [
+                        "ThuOGeoreNJDmaDH.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 2252,
+                "y": 380.75
+            },
+            "type": "action"
+        },
+        {
+            "_id": "7eRNKkNoN5dZqP6q",
+            "inputs": {
+                "in": {
+                    "ids": [
+                        "t6Jw4cjUoEgfW3dP.outputs.true"
+                    ]
+                },
+                "item": {
+                    "ids": [
+                        "08LoYch4whGmLqJG.outputs.item"
+                    ]
+                },
+                "nb": {
+                    "ids": [],
+                    "value": 2
+                }
+            },
+            "key": "extract-formula",
+            "outputs": {
+                "formula": {
+                    "ids": []
+                },
+                "out": {
+                    "ids": [
+                        "XZc1rR4XXcBKFOXH.inputs.in"
+                    ]
+                }
+            },
+            "position": {
+                "x": 1497.5,
+                "y": 349.75
+            },
+            "type": "action"
+        },
+        {
+            "_id": "Wm6aradk2tpyvZ1A",
+            "inputs": {
+                "item": {
+                    "ids": [
+                        "11mVqQBzL3b7YQmM.outputs.output"
+                    ]
+                },
+                "note": {
+                    "ids": [
+                        "ZzGh877LtxaQXxHe.outputs.result"
+                    ]
+                },
+                "options": {
+                    "ids": [
+                        "EBwUHX5lFvhdiHoZ.outputs.output"
+                    ]
+                },
+                "origin": {
+                    "ids": [
+                        "QMAd1CgQtEoIO6sV.outputs.output"
+                    ]
+                }
+            },
+            "key": "roll-data",
+            "outputs": {
+                "roll": {
+                    "ids": [
+                        "HV0Om2ZO32n83dOb.inputs.roll"
+                    ]
+                }
+            },
+            "position": {
+                "x": 2247.5,
+                "y": 543.25
+            },
+            "type": "value"
+        },
+        {
+            "_id": "XZc1rR4XXcBKFOXH",
+            "inputs": {
+                "in": {
+                    "ids": [
+                        "7eRNKkNoN5dZqP6q.outputs.out"
+                    ]
+                },
+                "input": {
+                    "ids": [],
+                    "value": "<strong>Steam Knight</strong> <span class=\"action-glyph\">F</span>"
+                },
+                "prefix": {
+                    "ids": [],
+                    "value": "<p>"
+                },
+                "suffix": {
+                    "ids": [],
+                    "value": "</p>"
+                }
+            },
+            "key": "surround-text",
+            "outputs": {
+                "out": {
+                    "ids": [
+                        "ZzGh877LtxaQXxHe.inputs.in"
+                    ]
+                },
+                "result": {
+                    "ids": [
+                        "ZzGh877LtxaQXxHe.inputs.a"
+                    ]
+                }
+            },
+            "position": {
+                "x": 1751,
+                "y": 362.75
+            },
+            "type": "action"
+        },
+        {
+            "_id": "ZzGh877LtxaQXxHe",
+            "inputs": {
+                "a": {
+                    "ids": [
+                        "XZc1rR4XXcBKFOXH.outputs.result"
+                    ]
+                },
+                "b": {
+                    "ids": [],
+                    "value": "<p>At the start of each of your turns, you can emit steam as a free action. It deals fire damage to each creature in your kinetic aura with a @Check[reflex|against:kineticist|basic|options:area-effect|traits:composite,fire,impulse,kineticist,primal,stance,water] save against your class DC. A creature that fails is also pushed 5 feet.</p>"
+                },
+                "in": {
+                    "ids": [
+                        "XZc1rR4XXcBKFOXH.outputs.out"
+                    ]
+                }
+            },
+            "key": "concat-texts",
+            "outputs": {
+                "out": {
+                    "ids": [
+                        "HV0Om2ZO32n83dOb.inputs.in"
+                    ]
+                },
+                "result": {
+                    "ids": [
+                        "Wm6aradk2tpyvZ1A.inputs.note"
+                    ]
+                }
+            },
+            "position": {
+                "x": 1999,
+                "y": 382.75
+            },
+            "type": "action"
+        },
+        {
+            "_id": "08LoYch4whGmLqJG",
+            "inputs": {
+                "uuid": {
+                    "ids": [],
+                    "value": "Compendium.pf2e.feats-srd.Item.7PjBANpMMoBxTYq3"
+                }
+            },
+            "key": "item-source",
+            "outputs": {
+                "item": {
+                    "ids": [
+                        "7eRNKkNoN5dZqP6q.inputs.item"
+                    ]
+                }
+            },
+            "position": {
+                "x": 1280.5,
+                "y": 505.25
+            },
+            "type": "value"
+        },
+        {
+            "_id": "11mVqQBzL3b7YQmM",
+            "custom": {
+                "inputs": [],
+                "outputs": [
+                    {
+                        "custom": false,
+                        "group": "",
+                        "key": "output",
+                        "type": "item"
+                    }
+                ],
+                "outs": []
+            },
+            "key": "variable-getter",
+            "outputs": {
+                "output": {
+                    "ids": [
+                        "Wm6aradk2tpyvZ1A.inputs.item"
+                    ]
+                }
+            },
+            "position": {
+                "x": 2081.5,
+                "y": 622.25
+            },
+            "target": "08LoYch4whGmLqJG.outputs.item",
+            "type": "variable"
+        },
+        {
+            "_id": "EBwUHX5lFvhdiHoZ",
+            "custom": {
+                "inputs": [],
+                "outputs": [
+                    {
+                        "custom": false,
+                        "group": "",
+                        "key": "output",
+                        "type": "text"
+                    }
+                ],
+                "outs": []
+            },
+            "key": "variable-getter",
+            "outputs": {
+                "output": {
+                    "ids": [
+                        "Wm6aradk2tpyvZ1A.inputs.options"
+                    ]
+                }
+            },
+            "position": {
+                "x": 2026.5,
+                "y": 661.25
+            },
+            "target": "7eRNKkNoN5dZqP6q.outputs.options",
+            "type": "variable"
+        },
+        {
+            "_id": "ThuOGeoreNJDmaDH",
+            "inputs": {
+                "in": {
+                    "ids": [
+                        "HV0Om2ZO32n83dOb.outputs.out"
+                    ]
+                }
+            },
+            "key": "break-process",
+            "position": {
+                "x": 2478,
+                "y": 381.75
+            },
+            "type": "action"
+        },
+        {
+            "_id": "6DF9BrlIG0yQVPLX",
+            "custom": {
+                "inputs": [],
+                "outputs": [
+                    {
+                        "custom": false,
+                        "group": "",
+                        "key": "output",
+                        "type": "text"
+                    }
+                ],
+                "outs": []
+            },
+            "key": "variable-getter",
+            "outputs": {
+                "output": {
+                    "ids": [
+                        "HV0Om2ZO32n83dOb.inputs.formula"
+                    ]
+                }
+            },
+            "position": {
+                "x": 2041.5,
+                "y": 342.25
+            },
+            "target": "7eRNKkNoN5dZqP6q.outputs.formula",
+            "type": "variable"
+        },
+        {
+            "_id": "QMAd1CgQtEoIO6sV",
+            "custom": {
+                "inputs": [],
+                "outputs": [
+                    {
+                        "custom": false,
+                        "group": "",
+                        "key": "output",
+                        "type": "target"
+                    }
+                ],
+                "outs": []
+            },
+            "key": "variable-getter",
+            "outputs": {
+                "output": {
+                    "ids": [
+                        "Wm6aradk2tpyvZ1A.inputs.origin"
+                    ]
+                }
+            },
+            "position": {
+                "x": 2079.5,
+                "y": 585.25
+            },
+            "target": "RuDsbE2sXw6FKxYB.outputs.this",
+            "type": "variable"
+        }
+    ],
+    "variables": {
+        "08LoYch4whGmLqJG.outputs.item": {
+            "global": false,
+            "label": "Steam Knight",
+            "locked": false,
+            "type": "item"
+        },
+        "7eRNKkNoN5dZqP6q.outputs.formula": {
+            "global": false,
+            "label": "Steam Knight Formula",
+            "locked": false,
+            "type": "text"
+        },
+        "7eRNKkNoN5dZqP6q.outputs.options": {
+            "global": false,
+            "label": "Steam Knight Options",
+            "locked": false,
+            "type": "text"
+        },
+        "oJoLfkzu2efQOzkI.outputs.other": {
+            "global": false,
+            "label": "Scene Target",
+            "type": "target"
+        }
+    }
+}
