@@ -1,0 +1,32 @@
+name: "Trigger Error"
+description: Report unexpected or erroneous behavior in a trigger
+labels: ["trigger-error"]
+body:
+  - type: input
+    id: feature_link
+    attributes:
+      label: "Trigger Name"
+      description: "Provide the name of the trigger as presented in the module, including parentheticals"
+      placeholder: "Frightful Presence (Aura Entered)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Provide a description of the issue, including reproduction steps if it's not straightforward."
+      placeholder: "Describe your issue..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Pre-submission Checklist"
+      description: "Please confirm you have completed the following:"
+      options:
+        - label: "I have verified that this error occurs without any modules other than PF2e Trigger Trove and its dependencies enabled"
+          required: true
+        - label: "I have searched existing issues to ensure this error hasn't been reported before"
+          required: true

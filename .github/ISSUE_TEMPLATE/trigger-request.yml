@@ -6,10 +6,10 @@ body:
     id: feature_link
     attributes:
       label: "Rules Reference"
-      description: "Provide a link to the rules text you want supported (Archives of Nethys etc.)"
+      description: "Provide a link, if available, to the rules text you want supported (Archives of Nethys, Demiplane, etc.)."
       placeholder: "https://2e.aonprd.com/Spells.aspx?ID=2049"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: description
